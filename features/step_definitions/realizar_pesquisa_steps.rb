@@ -13,4 +13,5 @@ Entao('devo ser capaz de visualizar o produto pesquisado') do
     mensagem = find('p.alert').text
     expect(mensagem).to have_content "No results were found for your search \"bluose\""                
     
-end                                                                                        
+end     
+
