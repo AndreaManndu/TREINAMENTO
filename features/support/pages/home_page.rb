@@ -17,10 +17,7 @@ class HomePage
         visit visitar
     end
 end
-# def realizar_login(email,senha)
-#     find('#email').set email
-#     find('passwd').set senha
-# end
+
        
 
 

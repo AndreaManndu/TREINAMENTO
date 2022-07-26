@@ -1,29 +1,16 @@
-# Dado('que acesso a tela  principal') do                                          
-#     visit 'http://automationpractice.com'
-# end
-# Quando('faço login com {string} e {string}') do |email,senha|
-#     find('a[title="Log in to your customer account"]').click
-#     find('#email').set email
-#     find('#passwd').set senha
-#     click_button 'Sign in'
-#     sleep 5
-   
-#   end                                                                              
-                                                                                   
-# Então('devo ser autenticada {string}') do |mensagem|  
-#     mensagem_error = find("#center_column > div.alert.alert-danger").text  
-#     expect(mensagem_error).to have_content mensagem
-#   end           
-
-                                                                                  
-# Dado('que visito o site {string}') do |string|                                  
-#   pending # Write code here that turns the phrase above into concrete actions   
-# end                                                                             
+#frozen_string_literal: true
+Dado('que estou na pagina de Autenticacao') do
+ @login_sucesso.pagina_autenticacao
+                                    
+end                                                                             
                                                                                 
-# Quando('insiro o login {string} e {string}') do |string, string2|               
-#   pending # Write code here that turns the phrase above into concrete actions   
-# end                                                                             
+Quando('logo com as credenciais {string} e {string}') do |email, senha|               
+  @login_sucesso.inserir_credenciais(email,senha)
+end                                                                             
                                                                                 
-# Então('serei redirecionado para a página de {string}') do |string|              
-#   pending # Write code here that turns the phrase above into concrete actions   
-# end                                                                             
+Então('serei redirecionado para a página de {string}') do |myaccount| 
+  #O puts foi usado para investigar o que o metodo pega_titulo está retornando
+  puts @login_sucesso.pega_titulo_pagina
+  expect(@login_sucesso.pega_titulo_pagina).to have_content myaccount             
+     
+end                                                                             
