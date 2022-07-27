@@ -7,7 +7,7 @@ Before do
     page.driver.browser.manage.window.maximize
     #Aqui estamos instanciando a classe "HomePage"
     @home_page= HomePage.new
-    @login_sucesso=Login.new
+    @login_page=LoginPage.new
 end
     
 

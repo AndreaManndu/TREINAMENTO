@@ -1,21 +1,28 @@
 # #frozen_string_literal: true
 require 'capybara/dsl'
-class Login
+
+class LoginPage
     include Capybara::DSL
+
+    def clicar_signin
+        find('a[title="Log in to your customer account"]').click
+    end
+
     def inserir_credenciais(email,senha)
         find('#email').set email
         find('#passwd').set senha
-        find('#SubmitLogin').click
-        sleep 5
-    end
-    def pagina_autenticacao
-        visit 'http://automationpractice.com/index.php?controller=authentication'
+    end   
+    
+    def button_signin
+        click_button 'Sign in'
     end
 
-    def pega_titulo_pagina
-        #sempre lembrar de colocar o return pq o .text retorna uma informação
-        sleep 3
-        return find('h1.page-heading').text
+    def exibir_msg_myaccount
+        find('h1.page-heading').text
+    end
+    
+    def exibir_msg_erro
+        find('ol>li').text
     end
 end
 
