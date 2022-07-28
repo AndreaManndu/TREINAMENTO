@@ -5,7 +5,7 @@ class LoginPage
     include Capybara::DSL
 
     def clicar_signin
-        find('a[title="Log in to your customer account"]').click
+        find('a.login').click
     end
 
     def inserir_credenciais(email,senha)
@@ -20,11 +20,13 @@ class LoginPage
     def exibir_msg_myaccount
         find('h1.page-heading').text
     end
-    
+
     def exibir_msg_erro
         find('ol>li').text
     end
 end
+
+
 
     
     

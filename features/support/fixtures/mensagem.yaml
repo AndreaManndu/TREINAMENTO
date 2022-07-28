@@ -1,0 +1,14 @@
+email_incorreto:
+  mensagem: "Authentication failed."
+email_vazio:
+  mensagem: "An email address required."
+senha_invalida:
+  mensagem: "Invalid password."
+senha_vazio:
+  mensagem: "Password is required."
+login_campos_vazio: 
+  mensagem: "An email address required."
+senha_incorreta:
+  mensagem: "Authentication failed."
+
+
